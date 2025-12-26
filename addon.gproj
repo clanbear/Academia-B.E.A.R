@@ -1,0 +1,8 @@
+GameProject {
+ ID "AcademiaBEAR"
+ GUID "67352B04529887EE"
+ TITLE "Academia B.E.A.R"
+ Dependencies {
+  "58D0FB3206B6F859"
+ }
+}
