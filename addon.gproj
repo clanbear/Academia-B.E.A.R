@@ -3,6 +3,20 @@ GameProject {
  GUID "67352B04529887EE"
  TITLE "Academia B.E.A.R"
  Dependencies {
-  "58D0FB3206B6F859"
+  "58D0FB3206B6F859" "616313E2836844FF" "66D4117974B3F12F"
+ }
+ Configurations {
+  GameProjectConfig PC {
+  }
+  GameProjectConfig XBOX_ONE {
+  }
+  GameProjectConfig XBOX_SERIES {
+  }
+  GameProjectConfig PS4 {
+  }
+  GameProjectConfig PS5 {
+  }
+  GameProjectConfig HEADLESS {
+  }
  }
 }
