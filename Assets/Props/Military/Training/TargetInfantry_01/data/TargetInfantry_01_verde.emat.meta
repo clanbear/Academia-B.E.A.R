@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{CF62A50CEF551837}Assets/Props/Military/Training/TargetInfantry_01/data/TargetInfantry_01_verde.emat"
+ Configurations {
+  EMATResourceClass PC {
+  }
+  EMATResourceClass XBOX_ONE : PC {
+  }
+  EMATResourceClass XBOX_SERIES : PC {
+  }
+  EMATResourceClass PS4 : PC {
+  }
+  EMATResourceClass PS5 : PC {
+  }
+  EMATResourceClass HEADLESS : PC {
+  }
+ }
+}

@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{0548EDEB6BD21B08}Assets/Props/Military/Training/TargetInfantry_01/data/TargetInfantry_01_rojo.emat"
+ Configurations {
+  EMATResourceClass PC {
+  }
+  EMATResourceClass XBOX_ONE : PC {
+  }
+  EMATResourceClass XBOX_SERIES : PC {
+  }
+  EMATResourceClass PS4 : PC {
+  }
+  EMATResourceClass PS5 : PC {
+  }
+  EMATResourceClass HEADLESS : PC {
+  }
+ }
+}

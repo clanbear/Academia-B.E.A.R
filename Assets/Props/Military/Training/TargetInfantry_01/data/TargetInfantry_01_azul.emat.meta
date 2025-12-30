@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{30C6682237F302C5}Assets/Props/Military/Training/TargetInfantry_01/data/TargetInfantry_01_azul.emat"
+ Configurations {
+  EMATResourceClass PC {
+  }
+  EMATResourceClass XBOX_ONE : PC {
+  }
+  EMATResourceClass XBOX_SERIES : PC {
+  }
+  EMATResourceClass PS4 : PC {
+  }
+  EMATResourceClass PS5 : PC {
+  }
+  EMATResourceClass HEADLESS : PC {
+  }
+ }
+}

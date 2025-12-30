@@ -1,0 +1,64 @@
+MatPBRMulti {
+ Color 0.157 0.624 0.275 1
+ SurfaceProperties "{CE9253778DD8FBDE}Common/Materials/Game/metal.gamemat"
+ UVSrcGlobalMaps "UV set 2"
+ MaskMap "{1D38B07C244B4AD0}Assets/Props/Military/Training/TargetInfantry_01/data/TargetInfantry_01_GLOBAL_MASK.edds"
+ VFXMap "{255486453A123523}Assets/Props/Military/Training/TargetInfantry_01/data/TargetInfantry_01_VFX.edds"
+ MudOpacity 0.954
+ MudColor 0.165 0.165 0.165 1
+ MudMetalness 0.185
+ MudBCRMap "{6E3195AD6C06CB70}Assets/_SharedData/Metal/ST_Metal_Galv_01_BCR.edds"
+ MudMaskMap "{2563D86FF583B1EF}Assets/_SharedData/DetailMask/ST_Metal_Rust_01_Mask1.edds"
+ MudUVTransform MatUVTransform "{50B436F7E80570FC}" {
+  TilingU 2
+  TilingV 2
+ }
+ DirtOpacity 0.352
+ DirtLayerSharpness 1.111
+ DirtColor 0.063 0.046 0.034 1
+ DirtRoughness 1
+ DirtMaskMap "{B62129F4BA24B2EA}Assets/_SharedData/DetailMask/ST_Concrete_04_Mask1.edds"
+ DirtUVTransform MatUVTransform "{50C68363087A9E61}" {
+  TilingU 2
+  TilingV 2
+ }
+ Enabled_4 1
+ BCR_4 "{8EF845C4F2DD79A9}Assets/Props/Military/Training/TargetInfantry_01/data/TargetInfantry_01_Details_BCR.edds"
+ NMO_4 "{B620FE562BAA2B37}Assets/Props/Military/Training/TargetInfantry_01/data/TargetInfantry_01_Details_NMO.edds"
+ Metalness_4 0.747
+ Enabled_3 1
+ Color_3 0.345 0.276 0.179 1
+ BCR_3 "{13363D128E99F591}Assets/_SharedData/Wood/ST_Plywood_03_BCR.edds"
+ NMO_3 "{2BEE868057EEA70F}Assets/_SharedData/Wood/ST_Plywood_03_NMO.edds"
+ Mask_3 "{C9664A554B37B2B2}Assets/_SharedData/DetailMask/ST_Damage_01_Mask1.edds"
+ UVTransform_3 MatUVTransform "{50F46BF7C92AE20D}" {
+  TilingU 1.25
+  TilingV 1.25
+  OffsetU -0.062
+  OffsetV 0.506
+ }
+ DetNormal_3 0.5
+ Metalness_3 0
+ Enabled_2 1
+ Color_2 0.012 0.011 0.01 1
+ BCR_2 "{5F54C1714DAA5E23}Assets/_SharedData/Plastic/ST_Plastic_Fine01_1m_BCR.edds"
+ NMO_2 "{678C7AE394DD0CBD}Assets/_SharedData/Plastic/ST_Plastic_Fine01_1m_NMO.edds"
+ MaskSharpness_2 1.297
+ MaskOffset_2 0.111
+ Mask_2 "{A074608E879A25CB}Assets/_SharedData/DetailMask/ST_Dirt_01_Mask1.edds"
+ MaskUVScale_2 0.5
+ UVTransform_2 MatUVTransform "{50B0A1DB6BAB998F}" {
+  TilingU 2
+  TilingV 2
+ }
+ Roughness_2 2.5
+ Metalness_2 0
+ Color_1 0.054 0.098 0.054 1
+ BCR_1 "{884C38B4DD0DD84A}Assets/_SharedData/Metal/ST_Metal_Worn_01_BCR.edds"
+ UVTransform_1 MatUVTransform "{50B02B37A6B9D5AB}" {
+  TilingU 1.5
+  TilingV 1.5
+ }
+ Roughness_1 2.5
+ Metalness_1 0
+}

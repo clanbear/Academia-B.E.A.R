@@ -1,0 +1,6 @@
+MatPBRBasic {
+ Color 0.157 0.624 0.275 1
+ SurfaceProperties "{EA270CE454C419FD}Common/Materials/Game/wood.gamemat"
+ MetalnessScale 0
+ BCRMap "{8EF845C4F2DD79A9}Assets/Props/Military/Training/TargetInfantry_01/data/TargetInfantry_01_Details_BCR.edds"
+}
