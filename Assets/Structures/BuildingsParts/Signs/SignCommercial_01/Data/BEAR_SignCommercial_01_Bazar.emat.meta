@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{382D00CF3906A9EC}Assets/Structures/BuildingsParts/Signs/SignCommercial_01/Data/BEAR_SignCommercial_01_Bazar.emat"
+ Configurations {
+  EMATResourceClass PC {
+  }
+  EMATResourceClass XBOX_ONE : PC {
+  }
+  EMATResourceClass XBOX_SERIES : PC {
+  }
+  EMATResourceClass PS4 : PC {
+  }
+  EMATResourceClass PS5 : PC {
+  }
+  EMATResourceClass HEADLESS : PC {
+  }
+ }
+}

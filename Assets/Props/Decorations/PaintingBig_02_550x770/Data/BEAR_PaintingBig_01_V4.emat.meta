@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{1CE35786BA1AB51D}Assets/Props/Decorations/PaintingBig_02_550x770/Data/BEAR_PaintingBig_01_V4.emat"
+ Configurations {
+  EMATResourceClass PC {
+  }
+  EMATResourceClass XBOX_ONE : PC {
+  }
+  EMATResourceClass XBOX_SERIES : PC {
+  }
+  EMATResourceClass PS4 : PC {
+  }
+  EMATResourceClass PS5 : PC {
+  }
+  EMATResourceClass HEADLESS : PC {
+  }
+ }
+}

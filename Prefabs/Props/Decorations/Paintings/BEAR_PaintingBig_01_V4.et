@@ -1,0 +1,16 @@
+GenericEntity : "{0F12FAFA2E6655E6}Prefabs/Props/Decorations/Paintings/PaintingBig_02_base.et" {
+ ID "F0DBA538AC2A0552"
+ components {
+  MeshObject "{5872F0EB7FA40561}" {
+   Materials {
+    MaterialAssignClass "{689AB26B7B9E5B1B}" {
+     SourceMaterial "PaintingBig_02"
+     AssignedMaterial "{6267A18957C2A2C0}Assets/Props/Decorations/PaintingBig_02_550x770/Data/PaintingBig_02_V4.emat"
+    }
+   }
+  }
+  RigidBody "{5872F0EB7DFB5A9D}" {
+   ResponseIndex "TinyDestructible"
+  }
+ }
+}

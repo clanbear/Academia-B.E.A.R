@@ -1,0 +1,21 @@
+GenericEntity : "{B68D3829D4442F80}Prefabs/Props/Civilian/RadioSmall_01_Base.et" {
+ ID "5246C095726F8F40"
+ components {
+  MeshObject "{5872F0EB7FA40561}" {
+   Materials {
+    MaterialAssignClass "{68A7431B61DC30AA}" {
+     SourceMaterial "main"
+     AssignedMaterial "{C7EA82CC7F146C1E}Assets/Props/Civilian/RadioSmall_01/Data/RadioSmall_01_Black.emat"
+    }
+    MaterialAssignClass "{68A7431B61DC30C5}" {
+     SourceMaterial "MLOD"
+     AssignedMaterial "{564BF5C68F409414}Assets/Props/Civilian/RadioSmall_01/Data/RadioSmall_01_Black_MLOD.emat"
+    }
+   }
+  }
+  RigidBody "{5872F0EB7DFB5A9D}" {
+   ResponseIndex "TinyDestructible"
+  }
+ }
+ coords 2.823 3.685 -0.865
+}

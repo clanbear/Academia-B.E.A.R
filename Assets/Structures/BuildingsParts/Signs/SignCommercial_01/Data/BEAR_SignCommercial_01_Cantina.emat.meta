@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{AEDD23AD3CC88BF6}Assets/Structures/BuildingsParts/Signs/SignCommercial_01/Data/BEAR_SignCommercial_01_Cantina.emat"
+ Configurations {
+  EMATResourceClass PC {
+  }
+  EMATResourceClass XBOX_ONE : PC {
+  }
+  EMATResourceClass XBOX_SERIES : PC {
+  }
+  EMATResourceClass PS4 : PC {
+  }
+  EMATResourceClass PS5 : PC {
+  }
+  EMATResourceClass HEADLESS : PC {
+  }
+ }
+}

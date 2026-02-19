@@ -1,0 +1,66 @@
+MatPBRMulti {
+ SurfaceProperties "{EA270CE454C419FD}Common/Materials/Game/wood.gamemat"
+ UVSrcGlobalMaps "UV set 2"
+ MaskMap "{745BAC583AB8B5B3}Assets/Props/Decorations/PaintingBig_01_620x1000/Data/PaintingBig_01_GLOBAL_MASK.edds" "{745BAC583AB8B5B3}Assets/Props/Decorations/PaintingBig_01_620x1000/Data/PaintingBig_01_GLOBAL_MASK.edds" anim( 0 )
+ VFXMap "{5C09025D350609E5}Assets/Props/Decorations/PaintingBig_01_620x1000/Data/PaintingBig_01_VFX.edds"
+ MudOpacity 0.78
+ MudColor 0.772 0.432 0.243 1
+ MudRoughness 1.5
+ MudMetalness 0
+ MudDetNormal 10
+ MudBCRMap "{1AA12E733F4CD6D9}Assets/_SharedData/Wood/ST_WoodPlain_Mid_01_BCR.edds"
+ MudNMOMap "{227995E1E63B8447}Assets/_SharedData/Wood/ST_WoodPlain_Mid_01_NMO.edds" "{844236632B9A841A}Assets/_SharedData/Wood/ST_WoodPlain_Clean_01_NMO.edds" anim( 0 )
+ MudMaskMap "{40C5F6C5EAB5C60E}Assets/_SharedData/DetailMask/ST_Wood_01_Mask1.edds"
+ MudUVTransform MatUVTransform "{56B8223D52B97788}" {
+  TilingU 2
+  TilingV 2
+ }
+ DirtOpacity 0.55
+ DirtLayerSharpness 0.7
+ DirtColor 0.069 0.028 0 1
+ DirtRoughness 2
+ DirtMaskMap "{DE18086A9CA88FBA}Assets/_SharedData/DetailMask/ST_Dirt_04_Mask1.edds"
+ DirtUVTransform MatUVTransform "{56B822087A51ED13}" {
+  TilingU 4
+  TilingV 4
+ }
+ Enabled_4 1
+ BCR_4 "{EB2B6B32DB84FA43}Assets/Props/Decorations/PaintingBig_01_620x1000/Data/BEAR_PaintingCaptura_05_base.edds"
+ NMO_4 "{579B921646232DC5}Assets/_SharedData/Wallpaper/ST_Wallpaper_01_NMO.edds"
+ Metalness_4 0
+ Enabled_3 1
+ Color_3 1 0.61 0.371 1
+ BCR_3 "{1AA12E733F4CD6D9}Assets/_SharedData/Wood/ST_WoodPlain_Mid_01_BCR.edds"
+ NMO_3 "{227995E1E63B8447}Assets/_SharedData/Wood/ST_WoodPlain_Mid_01_NMO.edds" "{844236632B9A841A}Assets/_SharedData/Wood/ST_WoodPlain_Clean_01_NMO.edds" anim( 0 )
+ MaskSharpness_3 2.167
+ Mask_3 "{40C5F6C5EAB5C60E}Assets/_SharedData/DetailMask/ST_Wood_01_Mask1.edds"
+ UVTransform_3 MatUVTransform "{56BA247B09EDEF73}" {
+  TilingU 2
+  TilingV 2
+ }
+ DetNormal_3 0.2
+ Roughness_3 1.5
+ Enabled_2 1
+ Color_2 0.285 0.226 0.162 1
+ BCR_2 "{95F693947BE9C0BA}Assets/_SharedData/Wood/ST_Cork_01_BCR.edds" "{95F693947BE9C0BA}Assets/_SharedData/Wood/ST_Cork_01_BCR.edds" anim( 0 )
+ NMO_2 "{AD2E2806A29E9224}Assets/_SharedData/Wood/ST_Cork_01_NMO.edds" "{AD2E2806A29E9224}Assets/_SharedData/Wood/ST_Cork_01_NMO.edds" anim( 0 )
+ UVTransform_2 MatUVTransform "{56AA24837BD865D5}" {
+  TilingU 3.5
+  TilingV 3.5
+ }
+ DetNormal_2 0.5
+ Roughness_2 0.667
+ Metalness_2 0
+ Color_1 0.621 0.221 0.084 1
+ BCR_1 "{8D916745571A4220}Assets/_SharedData/Wood/ST_WoodPlain_Clean_02_BCR.edds"
+ NMO_1 "{227995E1E63B8447}Assets/_SharedData/Wood/ST_WoodPlain_Mid_01_NMO.edds" "{844236632B9A841A}Assets/_SharedData/Wood/ST_WoodPlain_Clean_01_NMO.edds" anim( 0 )
+ UVTransform_1 MatUVTransform "{56A885F65B12D6D0}" {
+  TilingU 3
+  TilingV 3
+  OffsetU -0.517
+  OffsetV 0.05
+ }
+ DetNormal_1 0.5
+ Roughness_1 1.417
+ Metalness_1 0
+}

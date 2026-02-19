@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{0194C8A8FCC36884}Assets/Props/Decorations/PaintingBig_01_620x1000/Data/BEAR_PaintingCaptura_02_base.emat"
+ Configurations {
+  EMATResourceClass PC {
+  }
+  EMATResourceClass XBOX_ONE : PC {
+  }
+  EMATResourceClass XBOX_SERIES : PC {
+  }
+  EMATResourceClass PS4 : PC {
+  }
+  EMATResourceClass PS5 : PC {
+  }
+  EMATResourceClass HEADLESS : PC {
+  }
+ }
+}

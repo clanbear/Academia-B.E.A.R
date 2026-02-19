@@ -1,0 +1,42 @@
+MatPBRMulti {
+ MaskMap "{1D016B6CD29B26A7}Assets/Structures/BuildingsParts/Signs/SignCommercial_01/Data/SignCommercial_01_GLOBAL_MASK.edds"
+ NormalPower 0.35
+ GlobalNMOMap "{5E9B5A9AF633BD94}Assets/_SharedData/Metal/ST_Steel_Battered_NMO.edds"
+ UVSrcDetail "UV set 2"
+ Color_4 0.256 0.224 0.12 1
+ MaskSharpness_4 1.027
+ MaskOffset_4 0.222
+ Mask_4 "{2563D86FF583B1EF}Assets/_SharedData/DetailMask/ST_Metal_Rust_01_Mask1.edds"
+ MaskUVScale_4 3.862
+ Roughness_4 1.986
+ Metalness_4 0
+ Enabled_3 1
+ Color_3 0.429 0.429 0.429 1
+ BCR_3 "{5BDCC611A9FF41BD}Assets/BEAR_SignMilitar_01_Bazar.edds"
+ MaskUVScale_3 19.295
+ UVTransform_3 MatUVTransform "{567A231463C3174A}" {
+  TilingU 0.998
+  TilingV 5.71
+  OffsetU 0.002
+  OffsetV 0.074
+ }
+ Roughness_3 0.32
+ Metalness_3 0
+ Enabled_2 1
+ BCR_2 "{D9F47D76A9247FD3}Assets/_SharedData/Metal/ST_Metal_Rust_01_BCR.edds"
+ NMO_2 "{E12CC6E470532D4D}Assets/_SharedData/Metal/ST_Metal_Rust_01_NMO.edds"
+ MaskSharpness_2 1.177
+ MaskOffset_2 0.134
+ Mask_2 "{C9664A554B37B2B2}Assets/_SharedData/DetailMask/ST_Damage_01_Mask1.edds"
+ MaskUVScale_2 2.337
+ Roughness_2 1.801
+ Metalness_2 0
+ BCR_1 "{884C38B4DD0DD84A}Assets/_SharedData/Metal/ST_Metal_Worn_01_BCR.edds"
+ NMO_1 "{B0948326047A8AD4}Assets/_SharedData/Metal/ST_Metal_Worn_01_NMO.edds"
+ UVTransform_1 MatUVTransform "{5224E54D2C3F7AEB}" {
+  TilingU 2
+  TilingV 2
+ }
+ Roughness_1 2.91
+ Metalness_1 0.909
+}

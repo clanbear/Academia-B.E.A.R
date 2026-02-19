@@ -1,0 +1,40 @@
+GenericEntity : "{8364151EF33B3B33}Prefabs/Structures/Core/FlagPole_Base.et" {
+ ID "50C6D20663830070"
+ components {
+  MeshObject "{68A73973226BF22A}" {
+   Object "{C41BFB78E6FFFBCB}Assets/Structures/Military/Flags/FlagPole_01/FlagPole_01.xob"
+  }
+  RigidBody "{68A73973226BF233}" {
+   ResponseIndex "LargeDestructible"
+   ModelGeometry 1
+   Static 1
+  }
+  SCR_DestructionMultiPhaseComponent "{51BACBF3C4A56479}" : "{76DA308CC9E2AB84}Prefabs/Props/Core/DestructionMultiPhase_Base.ct" {
+   Enabled 1
+   m_fBaseHealth 1000
+   m_fDamageThresholdMaximum 13000
+   m_bDestroyChildrenWhenDestroyed 1
+   m_DestroySpawnObjects {
+    SCR_DebrisSpawnable "{59F4DEA21300CAF1}" : "{1EE9F8F556A0DDE9}Configs/Destruction/MultiphaseDestruction/FX_Debris/FX_Debris_Metal_Pole.conf" {
+     m_ModelPrefabs {
+      "{513A006EDAC6744F}Assets/Structures/Military/Flags/FlagPole_01/dst/Flagpole_01_dbr_01.xob"
+     }
+     m_fMass 50
+     m_fMaxDamageToSpeedMultiplier 0.8
+     m_eMaterialSoundType METAL_POLE
+    }
+   }
+   m_aDamagePhases {
+    SCR_DamagePhaseData "{68A73973226BF24B}" {
+     m_PhaseModel "{180F19ED1440D32A}Assets/Structures/Military/Flags/FlagPole_01/dst/Flagpole_01_dst.xob"
+    }
+   }
+   m_eMaterialSoundType BREAK_METAL_POLE
+  }
+  SCR_FlagComponent "{68A73973226BF245}" {
+  }
+  RplComponent "{6684B117160FF235}" : "{3B686EF5E3C610B9}Prefabs/Props/Core/DestructionMultiPhase_Rpl_Base.ct" {
+   Enabled 1
+  }
+ }
+}

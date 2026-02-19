@@ -1,0 +1,70 @@
+GenericEntity : "{80C8C9227D2C7CF5}Prefabs/Characters/Core/Footwear_Base.et" {
+ ID "5244C46FA7C5E08C"
+ components {
+  Persistence "{64EE8D7138865B7E}" {
+   Flags 0 0x3
+  }
+  InventoryItemComponent "{5244C46AD695742D}" {
+   Enabled 0
+   Attributes SCR_ItemAttributeCollection "{689AD763B7B4E74E}" {
+    ItemDisplayName UIInfo "{689AD763B7B4E768}" {
+     Name "#AR-Boots_USCombatBoots_Name"
+     Description "#AR-Boots_USCombatBoots_Description"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{689AD763B7B4E764}" {
+     Weight 2
+     SizeSetupStrategy Manual
+     ItemDimensions 15 15 15
+     ItemVolume 2500
+    }
+    CustomAttributes {
+     PreviewRenderAttributes "{689AD763B7B4E761}" {
+      CameraOrbitAngles -25 25 0
+      CameraDistanceToItem 2.5
+      FOV 10
+      PreviewModel "{2D13DB50F18C79C0}Assets/Characters/Footwear/CombatBoots_US_01/CombatBoots_US_01_item.xob"
+     }
+    }
+   }
+  }
+  MeshObject "{5244C34DEE7DBFB4}" {
+   Object "{2D13DB50F18C79C0}Assets/Characters/Footwear/CombatBoots_US_01/CombatBoots_US_01_item.xob"
+  }
+  RigidBody "{5244C34DEE7DBFB9}" {
+   Enabled 0
+  }
+  SCR_SoundDataComponent "{5B18D20AEB88FF42}" {
+   Enabled 0
+  }
+  BaseLoadoutClothComponent "{5244C34DEE7DBFB2}" {
+   AreaType LoadoutBootsArea "{689AD763B7B4E77D}" {
+   }
+   WornModel "{8876B76F52CFD088}Assets/Characters/Footwear/CombatBoots_US_01/CombatBoots_US_01.xob"
+   ItemModel "{2D13DB50F18C79C0}Assets/Characters/Footwear/CombatBoots_US_01/CombatBoots_US_01_item.xob"
+   SoundInt 610
+   OverrideMeshesToHide {
+    "Foot_L" "Foot_R"
+   }
+  }
+  ActionsManagerComponent "{5244C34DEE7DBF9F}" {
+   Enabled 0
+   ActionContexts {
+    UserActionContext "{5244C34DEE7DBF83}" {
+     Position PointInfo "{5244C34DEE7DBF80}" {
+      Offset 0 0.1 0
+     }
+    }
+   }
+  }
+  RplComponent "{5244C34DEE7DBFA6}" {
+   Enabled 0
+   "Self Insert" 0
+   SpatialRelevancy 0
+  }
+  Hierarchy "{5C669EC89A201F2A}" {
+   Enabled 0
+   AutoTransform 0
+  }
+ }
+ coords 1212.622 39.094 2839.711
+}

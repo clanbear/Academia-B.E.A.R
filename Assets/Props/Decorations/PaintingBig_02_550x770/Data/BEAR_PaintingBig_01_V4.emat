@@ -1,0 +1,61 @@
+MatPBRMulti {
+ Color 1 1 1 1
+ MetalnessScale 0
+ UVSrcGlobalMaps "UV set 2"
+ MaskMap "{531F100F7F8DBD67}Assets/Props/Decorations/PaintingBig_02_550x770/Data/PaintingBig_02_GLOBAL_MASK.edds"
+ VFXMap "{8DC0FC8A8750467C}Assets/Props/Decorations/PaintingBig_02_550x770/Data/PaintingBig_02_VFX.edds"
+ NormalPower 0.9
+ GlobalNMOMap "{FDB2F922DB34F710}Assets/Props/Decorations/PaintingBig_02_550x770/Data/PaintingBig_02_NMO.edds"
+ GlobalNMOUVTransform MatUVTransform "{56B8212882B26527}" {
+ }
+ UVSrcGlobNormal "UV set 2"
+ MudOpacity 0.9
+ MudColor 0.209 0.181 0.141 1
+ MudMetalness 0
+ MudBCRMap "{A4514F137C0238D2}Assets/_SharedData/Wood/ST_WoodPlain_Mid_03_BCR.edds"
+ MudMaskMap "{40C5F6C5EAB5C60E}Assets/_SharedData/DetailMask/ST_Wood_01_Mask1.edds"
+ MudUVTransform MatUVTransform "{56B82131B6A86BF0}" {
+  TilingU 5
+  TilingV 5
+ }
+ DirtOpacity 0.8
+ DirtLayerSharpness 0.7
+ DirtColor 0.031 0.022 0.013 1
+ DirtRoughness 1
+ DirtMaskMap "{0DC0CF2664DE6DE5}Assets/_SharedData/DetailMask/ST_Scratch_01_Mask1.edds"
+ Enabled_4 1
+ Color_4 1 1 1 1
+ BCR_4 "{7A58F96345822410}Assets/Props/Decorations/PaintingBig_02_550x770/Data/BEAR_PaintingBig_01_V4.edds"
+ DetNormal_4 0.301
+ Metalness_4 0
+ Enabled_3 1
+ Color_3 0.138 0.114 0.087 1
+ BCR_3 "{95F693947BE9C0BA}Assets/_SharedData/Wood/ST_Cork_01_BCR.edds"
+ NMO_3 "{AD2E2806A29E9224}Assets/_SharedData/Wood/ST_Cork_01_NMO.edds"
+ UVTransform_3 MatUVTransform "{56B6216B99090ACC}" {
+  TilingU 4
+  TilingV 4
+ }
+ Metalness_3 0
+ Enabled_2 1
+ Color_2 0.181 0.118 0.106 1
+ BCR_2 "{BC9A8DF1F2EDD684}Assets/_SharedData/Wood/ST_WoodPlain_Clean_01_BCR.edds"
+ NMO_2 "{844236632B9A841A}Assets/_SharedData/Wood/ST_WoodPlain_Clean_01_NMO.edds"
+ MaskSharpness_2 4.361
+ Mask_2 "{37524A19D6A23FC6}Assets/_SharedData/DetailMask/ST_Paint_peeling_02_Mask1.edds"
+ UVTransform_2 MatUVTransform "{56B621665D7305F3}" {
+  TilingU 2
+  TilingV 2
+ }
+ DetNormal_2 0.4
+ Metalness_2 0
+ Color_1 0.462 0.298 0.156 1
+ BCR_1 "{BC9A8DF1F2EDD684}Assets/_SharedData/Wood/ST_WoodPlain_Clean_01_BCR.edds"
+ NMO_1 "{844236632B9A841A}Assets/_SharedData/Wood/ST_WoodPlain_Clean_01_NMO.edds"
+ UVTransform_1 MatUVTransform "{56B62111DCC66B97}" {
+  TilingU 3
+  TilingV 3
+ }
+ DetNormal_1 0.5
+ Metalness_1 0
+}

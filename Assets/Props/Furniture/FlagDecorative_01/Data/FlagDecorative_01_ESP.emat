@@ -1,0 +1,6 @@
+MatPBRBasic {
+ Cull none
+ MetalnessScale 0
+ BCRMap "{08D3A45DA976FB96}Assets/Props/Furniture/FlagDecorative_01/Data/FlagDecorative_01_ESP.edds"
+ NMOMap "{ED203C3273A9D582}Assets/Props/Fabric/Flags/Data/Flag_2_3_N.edds"
+}

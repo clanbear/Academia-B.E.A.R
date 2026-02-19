@@ -1,0 +1,18 @@
+GenericEntity : "{53BCAE1D9CC2FAF0}Prefabs/Props/Furniture/FlagDecorative_01/FlagDecorative_01_base.et" {
+ ID "50C6D20663830070"
+ {
+  GenericEntity : "{2520272F0787D5D2}Prefabs/Props/Furniture/FlagDecorative_01/FlagDecorative_01_flag_USA.et" {
+   ID "68A7224912CCD204"
+   components {
+    MeshObject "{5872F0EB7FA40561}" {
+     Materials {
+      MaterialAssignClass "{68A7224912CCD22D}" {
+       SourceMaterial "FlagDecorative_02"
+       AssignedMaterial "{DD580AE49B51FA04}Assets/Props/Furniture/FlagDecorative_01/Data/FlagDecorative_01_flag_USA.emat"
+      }
+     }
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{9579F2B2D6929CBE}Assets/Props/Commercial/SignPub_01/Data/BEAR_SignPub_01_Cantina.emat"
+ Configurations {
+  EMATResourceClass PC {
+  }
+  EMATResourceClass XBOX_ONE : PC {
+  }
+  EMATResourceClass XBOX_SERIES : PC {
+  }
+  EMATResourceClass PS4 : PC {
+  }
+  EMATResourceClass PS5 : PC {
+  }
+  EMATResourceClass HEADLESS : PC {
+  }
+ }
+}

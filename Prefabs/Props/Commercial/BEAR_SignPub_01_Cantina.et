@@ -1,0 +1,23 @@
+SCR_DestructibleEntity : "{45849C84A20B71C1}Prefabs/Props/Commercial/SignPub_01_base.et" {
+ ID "F0DBA538AC2A0552"
+ components {
+  MeshObject "{5872F0EB7FA40561}" {
+   Object "{2CE593C7CFD3805C}Assets/Props/Commercial/SignPub_01/SignPub_01.xob"
+   Materials {
+    MaterialAssignClass "{68A57B9DF8EE2D25}" {
+     SourceMaterial "SignPub_01_Text_Decals"
+     AssignedMaterial "{D5EE0C10A0CC5930}Assets/Props/Commercial/SignPub_01/Data/SignPub_01_Eden_FoodMarket_V1.emat"
+    }
+   }
+  }
+  RigidBody "{5872F0EB7DFB5A9D}" {
+   Mass 5
+   ResponseIndex "TinyDestructible"
+   Static 1
+  }
+  SCR_DestructionMultiPhaseComponent "{5624A88D86EFE8BA}" : "{76DA308CC9E2AB84}Prefabs/Props/Core/DestructionMultiPhase_Base.ct" {
+   m_eMaterialSoundType BREAK_WOOD_SOLID
+  }
+ }
+ coords 0 0 0
+}

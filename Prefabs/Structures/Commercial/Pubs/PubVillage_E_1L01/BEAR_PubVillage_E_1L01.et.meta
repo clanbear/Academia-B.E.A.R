@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{CD09BE80425F8EE0}Prefabs/Structures/Commercial/Pubs/PubVillage_E_1L01/BEAR_PubVillage_E_1L01.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}
