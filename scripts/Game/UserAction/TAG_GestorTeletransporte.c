@@ -62,7 +62,7 @@ class TAG_GestorTeletransporte : ScriptedUserAction
 		if (TeletransportarJugador(pUserEntity, destino_ViajeRapido, nombreOrigen))
 		{
 			IniciarCooldown(playerId);
-			MostrarSugerenciaAJugador(pUserEntity, string.Format("Transportando a: %1", destino_ViajeRapido));
+			MostrarSugerenciaAJugador(pUserEntity, string.Format("Transportando a: %1", ObtenerNombreAccion()));
 		}
 	}
 
@@ -162,5 +162,15 @@ class TAG_GestorTeletransporte : ScriptedUserAction
 	override bool HasLocalEffectOnlyScript()
 	{
 		return false;
+	}
+	
+	// Obtiene el nombre configurado en UI Info
+	protected string ObtenerNombreAccion()
+	{
+	    UIInfo uiInfo = GetUIInfo();
+	    if (!uiInfo)
+	        return string.Empty;
+	        
+	    return uiInfo.GetName();
 	}
 }
