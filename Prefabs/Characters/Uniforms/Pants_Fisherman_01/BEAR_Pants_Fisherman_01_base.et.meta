@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{B95A94A6A76E373B}Prefabs/Characters/Uniforms/Pants_Fisherman_01/BEAR_Pants_Fisherman_01_base.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

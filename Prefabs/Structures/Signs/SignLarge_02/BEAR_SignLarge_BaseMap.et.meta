@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{02D1D4FA965A1A59}Prefabs/Structures/Signs/SignLarge_02/BEAR_SignLarge_BaseMap.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

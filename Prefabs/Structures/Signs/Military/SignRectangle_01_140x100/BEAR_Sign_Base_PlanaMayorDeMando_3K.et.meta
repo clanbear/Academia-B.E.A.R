@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{3D0491C6932EE1AD}Prefabs/Structures/Signs/Military/SignRectangle_01_140x100/BEAR_Sign_Base_Enty_3K.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

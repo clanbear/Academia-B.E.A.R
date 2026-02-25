@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{B7191ADD5177B079}Assets/Structures/Signs/Military/Data/prueba_Sign_BaseEntrance_FIA_01_01.emat"
+ Configurations {
+  EMATResourceClass PC {
+  }
+  EMATResourceClass XBOX_ONE : PC {
+  }
+  EMATResourceClass XBOX_SERIES : PC {
+  }
+  EMATResourceClass PS4 : PC {
+  }
+  EMATResourceClass PS5 : PC {
+  }
+  EMATResourceClass HEADLESS : PC {
+  }
+ }
+}

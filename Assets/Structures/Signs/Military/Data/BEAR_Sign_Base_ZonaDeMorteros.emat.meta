@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{981455365180937A}Assets/Structures/Signs/Military/Data/BEAR_Sign_Base_ZonaDeMorteros.emat"
+ Configurations {
+  EMATResourceClass PC {
+  }
+  EMATResourceClass XBOX_ONE : PC {
+  }
+  EMATResourceClass XBOX_SERIES : PC {
+  }
+  EMATResourceClass PS4 : PC {
+  }
+  EMATResourceClass PS5 : PC {
+  }
+  EMATResourceClass HEADLESS : PC {
+  }
+ }
+}

@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{C25C153705F0E8FB}Prefabs/Characters/HeadGear/Helmet_SPH4_01/BEAR_Helmet_SPH4_01.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

@@ -1,0 +1,88 @@
+SCR_DestructibleEntity : "{43B099F05634173B}Prefabs/Structures/Signs/Military/SignRectangle_01_140x100/SignRectangle_01_140x100_base.et" {
+ ID "50D67C36F4200F97"
+ components {
+  MeshObject "{54969A6AAAADA251}" {
+   Materials {
+    MaterialAssignClass "{68B3361D22B14CFC}" {
+     SourceMaterial "SignRectangle_01_140x100"
+     AssignedMaterial "{6DEFDD488E2155A2}Assets/Structures/Signs/Military/Data/Sign_BaseEntrance_FIA_01_01.emat"
+    }
+    MaterialAssignClass "{68B3361D22B14D09}" {
+     SourceMaterial "SignRectangle_01_140x100_MLOD"
+     AssignedMaterial "{AACD1F9678B72171}Assets/Structures/Signs/Military/Data/Sign_BaseEntrance_FIA_01_MLOD.emat"
+    }
+   }
+  }
+  RigidBody "{54969A6AA8773997}" {
+   ResponseIndex "TinyDestructible"
+  }
+  SCR_DestructionMultiPhaseComponent "{5496C1EF00137501}" {
+   Enabled 0
+   m_DestroySpawnObjects {
+    SCR_DebrisSpawnable "{58D4C8DAFF1CE2A0}" {
+     m_ModelPrefabs {
+      "{A4ECF8E0283240A7}Prefabs/Structures/Signs/Military/SignRectangle_01_140x100/Dst/SignRectangle_01_140x100_dst_02_FIA_entrance.et" "{34567B212E3EAD9C}Assets/Structures/Signs/Military/Dst/SignRectangle_01_140x100_dst_03.xob"
+     }
+    }
+   }
+  }
+  RplComponent "{566CB016AAC374C6}" {
+   Enabled 0
+  }
+ }
+ MaxHealth 3800
+ "Collision multiplier" 1
+ "Melee multiplier" 1
+ "Kinetic multiplier" 1
+ "Fragmentation multiplier" 1
+ "Explosive multiplier" 90
+ "Incendiary multiplier" 1
+ BaseDamageMultiplier 1
+ DamageReduction 0
+ DamageThreshold 0
+ DestroyAtNoHealth 1
+ FirstDestructionPhase SCR_BaseDestructionPhase "{68B3361D22B14D00}" {
+  m_sPhaseModel "{3C138FBF4F83E7C7}Assets/Structures/Signs/Military/SignRectangle_01_140x100.xob"
+  m_aPhaseDestroySpawnObjects {
+   SCR_ParticleSpawnable "{68B3361D22B14D1C}" {
+    m_vOffsetPosition 0 0 0
+    m_vOffsetRotation 0 0 0
+    m_Particle "{63D673751320F318}Particles/Props/Dest_Prop_Wood_Medium.ptc"
+    m_bAtCenter 1
+    m_bDirectional 1
+   }
+  }
+ }
+ LastDestructionPhase SCR_BaseDestructionPhase "{68B3361D22B14D19}" {
+  Threshold 0
+  m_sPhaseModel "{AD48C2B833D99C0C}Assets/Structures/Signs/Military/Dst/SignRectangle_01_140x100_dst_00.xob"
+  m_aPhaseDestroySpawnObjects {
+   SCR_ParticleSpawnable "{68B3361D22B14D1B}" {
+    m_vOffsetPosition 0 0 0
+    m_vOffsetRotation 0 0 0
+    m_Particle "{63D673751320F318}Particles/Props/Dest_Prop_Wood_Medium.ptc"
+    m_bAtCenter 1
+    m_bDirectional 1
+   }
+   SCR_DebrisSpawnable "{68B3361D22B14D15}" {
+    m_vOffsetPosition 0 0.5 0
+    m_vOffsetRotation 0 0 0
+    m_ModelPrefabs {
+     "{F939CE3602330923}Prefabs/Structures/Signs/Military/SignRectangle_01_140x100/Dst/SignRectangle_01_140x100_dst_02_US_entrance.et"
+    }
+    m_fMass 10
+    m_fLifetimeMin 5
+    m_fLifetimeMax 10
+    m_fDistanceMax 200
+    m_fPriority 0
+    m_fDamageToImpulse 0.1
+    m_fMaxDamageToSpeedMultiplier 2
+    m_fRandomVelocityLinear 0.5
+    m_fRandomVelocityAngular 180
+    m_eMaterialSoundType WOOD_PLANK_LARGE
+   }
+  }
+ }
+ m_fMomentumToDamageScale 0.05
+ m_eMaterialSoundType BREAK_METAL_POLE
+}
