@@ -1,7 +1,7 @@
 //------------------------------------------------------------------------------------------------
 //! Sistema de teletransporte con un único destino y cooldown
 //! Configurable vía atributos del editor
-class TAG_GestorTeletransporte : ScriptedUserAction
+class BEAR_GestorTeletransporte : ScriptedUserAction
 {
 	//! Desplazamiento mínimo respecto al destino para evitar colisiones
 	protected const float DESPLAZAMIENTO_TELEPORT = 1.0;
@@ -23,7 +23,7 @@ class TAG_GestorTeletransporte : ScriptedUserAction
 
 	//------------------------------------------------------------------------------------------------
 	//! Constructor - inicializa el sistema de cooldown
-	void TAG_GestorTeletransporte()
+	void BEAR_GestorTeletransporte()
 	{
 		mapaRecargaJugadores = new map<int, bool>();
 		mapaUltimoUso = new map<int, float>();
