@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{23537F285790A1EA}worlds/Navmesh/BEAR_Eden_Navmesh_BTRlike.nmn"
+ Configurations {
+  NavMeshResourceClass PC {
+  }
+  NavMeshResourceClass XBOX_ONE : PC {
+  }
+  NavMeshResourceClass XBOX_SERIES : PC {
+  }
+  NavMeshResourceClass PS4 : PC {
+  }
+  NavMeshResourceClass PS5 : PC {
+  }
+  NavMeshResourceClass HEADLESS : PC {
+  }
+ }
+}
