@@ -4,7 +4,7 @@ MatPBRMulti {
  MaskGreenScale 0.434
  Enabled_4 1
  Color_4 0.456 0.456 0.456 1
- BCR_4 "{0C178A3EC38C2589}Assets/Structures/Signs/Military/Data/BEAR_Sign_base_PistaDeObstaculos.edds"
+ BCR_4 "{0C178A3EC38C2589}Assets/Structures/Signs/Military/Data/BEAR_Sign_Base_PistadeObstaculos.edds"
  NMO_4 "{844236632B9A841A}Assets/_SharedData/Wood/ST_WoodPlain_Clean_01_NMO.edds"
  MaskSharpness_4 2
  Mask_4 "{40C5F6C5EAB5C60E}Assets/_SharedData/DetailMask/ST_Wood_01_Mask1.edds"

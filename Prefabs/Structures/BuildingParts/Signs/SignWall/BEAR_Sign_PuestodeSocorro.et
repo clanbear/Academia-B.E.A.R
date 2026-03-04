@@ -1,0 +1,37 @@
+GenericEntity : "{533AC2E8A0F5272A}Prefabs/Structures/BuildingParts/BuildingParts_Base.et" {
+ ID "5111E74D4E7A8DB6"
+ components {
+  MeshObject "{5111E74D5E891458}" {
+   Object "{C223627C8AA4D53C}Assets/Structures/BuildingsParts/Signs/SignWall_01/SignWall_01_115x67.xob"
+   Materials {
+    MaterialAssignClass "{68C6106F7EC46C78}" {
+     SourceMaterial "SignWall_01_115x67"
+     AssignedMaterial "{CCD03644CFD9217A}Assets/Structures/BuildingsParts/Signs/SignWall_01/Data/BEAR_Sign_PuestodeSocorro.emat"
+    }
+    MaterialAssignClass "{68C6106F7EC46CAD}" {
+     SourceMaterial "SignWall_01_115x67_MLOD"
+     AssignedMaterial "{CCD03644CFD9217A}Assets/Structures/BuildingsParts/Signs/SignWall_01/Data/BEAR_Sign_PuestodeSocorro.emat"
+    }
+   }
+  }
+  RigidBody "{5111E74C06F5C1E1}" {
+   ResponseIndex "TinyDestructible"
+  }
+  SCR_DestructionMultiPhaseComponent "{58F896B4CD371A8B}" : "{76DA308CC9E2AB84}Prefabs/Props/Core/DestructionMultiPhase_Base.ct" {
+   m_fBaseHealth 500
+   m_DestroySpawnObjects {
+    SCR_DebrisSpawnable "{68C6106D151963B5}" {
+     m_ModelPrefabs {
+      "{007FB427B5DAAE35}Assets/Structures/BuildingsParts/Signs/SignWall_01/dst/SignWall_01_115x67_dst.xob"
+     }
+     m_fMass 1
+     m_fDamageToImpulse 1
+     m_fRandomVelocityLinear 1
+     m_eMaterialSoundType METAL_LIGHT
+    }
+   }
+   m_eMaterialSoundType BREAK_METAL
+  }
+ }
+ coords 32.395 -15.554 -6.819
+}

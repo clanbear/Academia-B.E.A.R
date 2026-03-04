@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{7ED7257C5214B0AF}Assets/Structures/BuildingsParts/Signs/SignWall_01/Data/BEAR_Sign_PatiodeArmas.emat"
+ Configurations {
+  EMATResourceClass PC {
+  }
+  EMATResourceClass XBOX_ONE : PC {
+  }
+  EMATResourceClass XBOX_SERIES : PC {
+  }
+  EMATResourceClass PS4 : PC {
+  }
+  EMATResourceClass PS5 : PC {
+  }
+  EMATResourceClass HEADLESS : PC {
+  }
+ }
+}

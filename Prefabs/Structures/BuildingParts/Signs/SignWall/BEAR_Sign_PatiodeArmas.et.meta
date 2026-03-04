@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{BFB9BD653D66F69E}Prefabs/Structures/BuildingParts/Signs/SignWall/BEAR_Sign_PatiodeArmas.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

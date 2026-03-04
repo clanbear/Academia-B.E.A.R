@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{FA1E76C9E3EA6954}Prefabs/Structures/Signs/SignLarge_02/BEAR_Sign_BaseMilitar.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

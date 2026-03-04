@@ -1,0 +1,21 @@
+GenericEntity : "{BBF8AF859DD5A4BA}Prefabs/Structures/BuildingParts/Signs/SignWall/SignWall_01_115x67_Base.et" {
+ ID "5558F0C9D9AACB2D"
+ components {
+  MeshObject "{5111E74D5E891458}" {
+   Materials {
+    MaterialAssignClass "{68C6021AE2CE0C16}" {
+     SourceMaterial "SignWall_01_115x67"
+     AssignedMaterial "{E0AF02C7F006EDAF}Assets/Structures/BuildingsParts/Signs/SignWall_01/Data/BEAR_Sign_PuestodeControldeDrones.emat"
+    }
+    MaterialAssignClass "{68C6021AE2CE0C4A}" {
+     SourceMaterial "SignWall_01_115x67_MLOD"
+     AssignedMaterial "{E0AF02C7F006EDAF}Assets/Structures/BuildingsParts/Signs/SignWall_01/Data/BEAR_Sign_PuestodeControldeDrones.emat"
+    }
+   }
+  }
+  RigidBody "{5111E74C06F5C1E1}" {
+   ResponseIndex "TinyDestructible"
+  }
+ }
+ scale 0.5
+}

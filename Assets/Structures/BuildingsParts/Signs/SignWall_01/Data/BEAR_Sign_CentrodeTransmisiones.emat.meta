@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{06C1F02E98FABC50}Assets/Structures/BuildingsParts/Signs/SignWall_01/Data/BEAR_Sign_CentrodeTransmisiones.emat"
+ Configurations {
+  EMATResourceClass PC {
+  }
+  EMATResourceClass XBOX_ONE : PC {
+  }
+  EMATResourceClass XBOX_SERIES : PC {
+  }
+  EMATResourceClass PS4 : PC {
+  }
+  EMATResourceClass PS5 : PC {
+  }
+  EMATResourceClass HEADLESS : PC {
+  }
+ }
+}

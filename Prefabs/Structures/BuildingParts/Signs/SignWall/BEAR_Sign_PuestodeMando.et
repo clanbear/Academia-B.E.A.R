@@ -1,0 +1,20 @@
+GenericEntity : "{BBF8AF859DD5A4BA}Prefabs/Structures/BuildingParts/Signs/SignWall/SignWall_01_115x67_Base.et" {
+ ID "5558F0C9D9AACB2D"
+ components {
+  MeshObject "{5111E74D5E891458}" {
+   Materials {
+    MaterialAssignClass "{68C40864A04D4BC9}" {
+     SourceMaterial "SignWall_01_115x67"
+     AssignedMaterial "{BA8AEAA246DD8C0A}Assets/Structures/BuildingsParts/Signs/SignWall_01/Data/BEAR_Sign_PuestodeMando.emat"
+    }
+    MaterialAssignClass "{68C40864A04D4BFE}" {
+     SourceMaterial "SignWall_01_115x67_MLOD"
+     AssignedMaterial "{BA8AEAA246DD8C0A}Assets/Structures/BuildingsParts/Signs/SignWall_01/Data/BEAR_Sign_PuestodeMando.emat"
+    }
+   }
+  }
+  RigidBody "{5111E74C06F5C1E1}" {
+   ResponseIndex "TinyDestructible"
+  }
+ }
+}

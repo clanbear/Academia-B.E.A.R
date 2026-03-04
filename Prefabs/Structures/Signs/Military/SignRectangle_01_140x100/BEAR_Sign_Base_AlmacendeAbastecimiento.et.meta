@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{BF5DE0983C78FE01}Prefabs/Structures/Signs/Military/SignRectangle_01_140x100/BEAR_Sign_Base_AlmacendeAbastecimiento.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

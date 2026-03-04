@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{B9A6AD59B9C4B20A}Prefabs/Structures/BuildingParts/Signs/SignWall/BEAR_Sign_PuestodeMando.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

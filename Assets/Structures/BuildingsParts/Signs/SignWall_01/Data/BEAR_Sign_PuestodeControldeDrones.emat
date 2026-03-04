@@ -1,0 +1,42 @@
+MatPBRMulti {
+ GlobalMCRMap "{8614AC220F9E7CA2}Assets/Structures/BuildingsParts/Signs/SignWall_01/Data/BEAR_Sign_PuestodeControldeDrones.edds"
+ MaskMap "{5866EA4521E5B942}Assets/Structures/BuildingsParts/Signs/SignWall_01/Data/SignWall_01_GLOBAL_MASK.edds"
+ Enabled_4 1
+ Color_4 0.223 0.116 0.022 1
+ MaskSharpness_4 0.441
+ MaskOffset_4 0.11
+ Mask_4 "{8A50472D717443E4}Assets/_SharedData/DetailMask/ST_Dirt_02_Mask1.edds"
+ UVTransform_4 MatUVTransform "{54A637C803E47AC5}" {
+  TilingU 2
+  TilingV 2
+  OffsetU -0.13
+  OffsetV -0.521
+ }
+ Metalness_4 0
+ Enabled_3 1
+ Color_3 0.141 0.128 0.124 1
+ BCR_3 "{16DE4E86EFB365EA}Assets/_SharedData/Metal/ST_Lighthouse_PaintedMetal_Rusted_BCR.edds"
+ NMO_3 "{E612484F08A45E18}Assets/_SharedData/Metal/ST_Lighthouse_PaintedMetal_Rusted_NMO.edds"
+ MaskSharpness_3 3.899
+ MaskOffset_3 0.107
+ Mask_3 "{1B7EB2580B7412F0}Assets/_SharedData/DetailMask/ST_Smudge_01_Mask1.edds"
+ UVTransform_3 MatUVTransform "{54A27CFBC637F18A}" {
+  TilingU 2
+  TilingV 2
+  OffsetU 0.069
+  OffsetV -0.992
+ }
+ DetNormal_3 0.5
+ Enabled_2 1
+ Color_2 0.423 0.383 0.37 1
+ BCR_2 "{16DE4E86EFB365EA}Assets/_SharedData/Metal/ST_Lighthouse_PaintedMetal_Rusted_BCR.edds"
+ NMO_2 "{E612484F08A45E18}Assets/_SharedData/Metal/ST_Lighthouse_PaintedMetal_Rusted_NMO.edds"
+ MaskSharpness_2 8.824
+ Mask_2 "{CBD042945A4747A5}Assets/_SharedData/DetailMask/ST_Concrete_03_Mask1.edds"
+ Color_1 0.624 0.608 0.586 1
+ BCR_1 "{8614AC220F9E7CA2}Assets/Structures/BuildingsParts/Signs/SignWall_01/Data/BEAR_Sign_PuestodeControldeDrones.edds"
+ NMO_1 "{839CBC1678749998}Assets/_SharedData/Metal/ST_MetalPaint_Coated_1m_NMO.edds"
+ DetNormal_1 0.423
+ Roughness_1 0.45
+ Metalness_1 0
+}

@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{AB227C05E0EC7A1B}Prefabs/Structures/Signs/Military/SignRectangle_01_140x100/BEAR_Sign_Base_ZonaDeTiroAlpha.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

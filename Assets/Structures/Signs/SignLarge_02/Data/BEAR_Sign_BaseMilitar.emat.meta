@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{EB0EB268B50C7BF3}Assets/Structures/Signs/SignLarge_02/Data/BEAR_Sign_BaseMilitar.emat"
+ Configurations {
+  EMATResourceClass PC {
+  }
+  EMATResourceClass XBOX_ONE : PC {
+  }
+  EMATResourceClass XBOX_SERIES : PC {
+  }
+  EMATResourceClass PS4 : PC {
+  }
+  EMATResourceClass PS5 : PC {
+  }
+  EMATResourceClass HEADLESS : PC {
+  }
+ }
+}

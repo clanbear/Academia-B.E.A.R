@@ -1,0 +1,17 @@
+SCR_DestructibleEntity : "{20EE67BDE1795CD3}Prefabs/Structures/Signs/SignLarge_02/SignLarge_USSR_02_180x290_base.et" {
+ ID "50D67C36F4200F97"
+ components {
+  MeshObject "{54969A6AAAADA251}" {
+   Materials {
+    MaterialAssignClass "{68B8D3A816180EC7}" {
+     SourceMaterial "SignLarge_02_180x290"
+     AssignedMaterial "{253720744157BFF0}Assets/Structures/Signs/SignLarge_02/Data/SignLarge_USSR_02_180x290_hammersickle_01.emat"
+    }
+    MaterialAssignClass "{68B8D3A816180EDF}" {
+     SourceMaterial "SignLarge_02_180x290_MLOD"
+     AssignedMaterial "{E5AEF3EE4854528B}Assets/Structures/Signs/SignLarge_02/Data/SignLarge_USSR_02_180x290_soldier_04_MLOD.emat"
+    }
+   }
+  }
+ }
+}

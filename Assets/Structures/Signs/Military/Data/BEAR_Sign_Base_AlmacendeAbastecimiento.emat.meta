@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{401A961C54F82088}Assets/Structures/Signs/Military/Data/BEAR_Sign_Base_AlmacendeAbastecimiento.emat"
+ Configurations {
+  EMATResourceClass PC {
+  }
+  EMATResourceClass XBOX_ONE : PC {
+  }
+  EMATResourceClass XBOX_SERIES : PC {
+  }
+  EMATResourceClass PS4 : PC {
+  }
+  EMATResourceClass PS5 : PC {
+  }
+  EMATResourceClass HEADLESS : PC {
+  }
+ }
+}
