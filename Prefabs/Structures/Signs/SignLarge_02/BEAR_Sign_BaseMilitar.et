@@ -3,11 +3,11 @@ SCR_DestructibleEntity : "{54C82F5580D6C936}Prefabs/Structures/Signs/SignLarge_0
  components {
   MeshObject "{54969A6AAAADA251}" {
    Materials {
-    MaterialAssignClass "{68C6C6D7C8642B99}" {
+    MaterialAssignClass "{68C97105E4DCF1F6}" {
      SourceMaterial "SignLarge_02_345x240"
      AssignedMaterial "{EB0EB268B50C7BF3}Assets/Structures/Signs/SignLarge_02/Data/BEAR_Sign_BaseMilitar.emat"
     }
-    MaterialAssignClass "{68C6C6D7C8642BB0}" {
+    MaterialAssignClass "{68C97105E4DCFE25}" {
      SourceMaterial "SignLarge_02_345x240_MLOD"
      AssignedMaterial "{EB0EB268B50C7BF3}Assets/Structures/Signs/SignLarge_02/Data/BEAR_Sign_BaseMilitar.emat"
     }

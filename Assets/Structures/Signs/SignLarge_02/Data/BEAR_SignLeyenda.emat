@@ -1,0 +1,19 @@
+MatPBRMulti : "{F50AA9B5632C5CE3}Assets/Structures/Signs/SignLarge_02/Data/SignLarge_02_180x290.emat" {
+ MudOpacity 1
+ MudColor 0.371 0.287 0.238 1
+ MudBCRMap "{C5EEAF752073C75C}Assets/_SharedData/Metal/ST_Metal_Rust_Coarse01_1m_BCR.edds"
+ Color_4 0.356 0.356 0.356 1
+ BCR_4 "{7299300CD7D007DF}Assets/Structures/Signs/SignLarge_02/Data/BEAR_SignLeyenda.edds"
+ NMO_4 "{7A2338BA51AAF865}Assets/_SharedData/Concrete/ST_Concrete_Wall_01_NMO.edds"
+ UVTransform_4 MatUVTransform "{5E92CEE30F0A16E6}" {
+  TilingU 1
+  TilingV 1.03
+  OffsetU -0.005
+  OffsetV -0.015
+  Rotation 0
+ }
+ DetNormal_4 0.75
+ Color_2 0.162 0.145 0.131 1
+ Color_1 0.171 0.157 0.145 1
+ Metalness_1 0
+}

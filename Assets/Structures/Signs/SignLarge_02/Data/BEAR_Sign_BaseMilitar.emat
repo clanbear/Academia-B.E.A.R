@@ -20,6 +20,5 @@ MatPBRMulti : "{1AEFB33ED7A4C273}Assets/Structures/Signs/SignLarge_02/Data/SignL
  DetNormal_4 0.75
  Color_2 0.162 0.118 0.088 1
  Color_1 0.184 0.165 0.151 1
- BCR_1 "{8DB51C8D4A94EAFE}Assets/Structures/Signs/SignLarge_02/Data/BEAR_Sign_BaseMilitar.edds"
  Metalness_1 0
 }

@@ -1,4 +1,6 @@
 MatPBRMulti : "{1AEFB33ED7A4C273}Assets/Structures/Signs/SignLarge_02/Data/SignLarge_02_345x240.emat" {
+ OverlayBlackPower 1
+ OverlayWhitePower 0.05
  NormalPower 0.75
  MudColor 0.352 0.272 0.225 1
  MudBCRMap "{C5EEAF752073C75C}Assets/_SharedData/Metal/ST_Metal_Rust_Coarse01_1m_BCR.edds"
@@ -16,11 +18,7 @@ MatPBRMulti : "{1AEFB33ED7A4C273}Assets/Structures/Signs/SignLarge_02/Data/SignL
   Rotation 0
  }
  DetNormal_4 0.75
- MaskSharpness_3 6.838
- MaskOffset_3 0.684
  Color_2 0.127 0.101 0.081 1
  Color_1 0.171 0.157 0.145 1
- BCR_1 "{A1597BBBFD8CC118}Assets/Structures/Signs/SignLarge_02/Data/BEAR_SignLarge_MapBase.edds"
- NMO_1 "{A1597BBBFD8CC118}Assets/Structures/Signs/SignLarge_02/Data/BEAR_SignLarge_MapBase.edds"
  Metalness_1 0
 }

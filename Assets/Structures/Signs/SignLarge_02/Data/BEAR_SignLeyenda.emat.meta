@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{14229EE9284896D2}Assets/Structures/Signs/SignLarge_02/Data/BEAR_SignLeyenda.emat"
+ Configurations {
+  EMATResourceClass PC {
+  }
+  EMATResourceClass XBOX_ONE : PC {
+  }
+  EMATResourceClass XBOX_SERIES : PC {
+  }
+  EMATResourceClass PS4 : PC {
+  }
+  EMATResourceClass PS5 : PC {
+  }
+  EMATResourceClass HEADLESS : PC {
+  }
+ }
+}
