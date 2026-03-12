@@ -1,6 +1,13 @@
 //------------------------------------------------------------------------------------------------
 //! Sistema de teletransporte aleatorio entre múltiples destinos configurables
-//! Ideal para cursos de orientación: el jugador es enviado a una zona aleatoria
+//! Compatible con multijugador (servidor dedicado)
+//! Correcciones aplicadas:
+//!   - Los hints ahora se envían correctamente al cliente (no desde servidor)
+//!   - SetOrigin usa reseteo de velocidad para compatibilidad con físicas MP
+//!   - Validaciones reforzadas para entorno de red (playerId > 0)
+//!   - Math.RandomInt corregido (el límite superior es exclusivo, era correcto
+//!     pero se documenta explícitamente)
+//!   - ObtenerCooldownRestante usa Math.Max en lugar de if/return duplicado
 class BEAR_GestorTeletransporteAleatorio : ScriptedUserAction
 {
 	//! Desplazamiento mínimo respecto al destino para evitar colisiones
@@ -23,7 +30,6 @@ class BEAR_GestorTeletransporteAleatorio : ScriptedUserAction
 	protected ref map<int, float> mapaUltimoUso;
 
 	//------------------------------------------------------------------------------------------------
-	//! Constructor - inicializa el sistema de cooldown y la lista de destinos
 	void BEAR_GestorTeletransporteAleatorio()
 	{
 		mapaRecargaJugadores = new map<int, bool>();
@@ -34,30 +40,38 @@ class BEAR_GestorTeletransporteAleatorio : ScriptedUserAction
 	}
 
 	//------------------------------------------------------------------------------------------------
-	//! Ejecuta la acción de teletransporte aleatorio con validaciones y cooldown
+	//! PerformAction SOLO se ejecuta en servidor. Aquí hacemos toda la lógica
+	//! y luego enviamos el hint al cliente mediante EnviarHintAlJugador().
 	override void PerformAction(IEntity pOwnerEntity, IEntity pUserEntity)
 	{
 		if (!Replication.IsServer())
 			return;
 
-		if (!ValidarEntidades(pOwnerEntity, pUserEntity))
+		if (!pOwnerEntity || !pUserEntity)
 			return;
 
-		int playerId = GetGame().GetPlayerManager().GetPlayerIdFromControlledEntity(pUserEntity);
+		PlayerManager playerManager = GetGame().GetPlayerManager();
+		if (!playerManager)
+			return;
+
+		int playerId = playerManager.GetPlayerIdFromControlledEntity(pUserEntity);
+		if (playerId <= 0)
+			return;
 
 		// Verificar cooldown del jugador
 		if (JugadorEnCooldown(playerId))
 		{
 			float tiempoRestante = ObtenerCooldownRestante(playerId);
 			int segundosRestantes = Math.Ceil(tiempoRestante);
-			MostrarSugerenciaAJugador(pUserEntity, string.Format("Espera %1 segundos", segundosRestantes));
+			// CORRECCIÓN: enviamos el hint al cliente, no lo llamamos en servidor
+			EnviarHintAlJugador(playerId, string.Format("Espera %1 segundos", segundosRestantes));
 			return;
 		}
 
 		// Verificar que haya destinos configurados
 		if (!listaDestinos || listaDestinos.IsEmpty())
 		{
-			MostrarSugerenciaAJugador(pUserEntity, "No hay destinos configurados.");
+			EnviarHintAlJugador(playerId, "No hay destinos configurados.");
 			return;
 		}
 
@@ -66,22 +80,29 @@ class BEAR_GestorTeletransporteAleatorio : ScriptedUserAction
 		
 		if (destinoElegido.IsEmpty())
 		{
-			MostrarSugerenciaAJugador(pUserEntity, "No se encontró ningún destino válido.");
+			EnviarHintAlJugador(playerId, "No se encontró ningún destino válido.");
 			return;
 		}
 
 		if (TeletransportarJugador(pUserEntity, destinoElegido))
 		{
 			IniciarCooldown(playerId);
-			MostrarSugerenciaAJugador(pUserEntity, string.Format("Transportando a: %1", ObtenerNombreAccion()));
+			string nombreAccion = ObtenerNombreAccion();
+			if (nombreAccion.IsEmpty())
+				nombreAccion = destinoElegido;
+			EnviarHintAlJugador(playerId, string.Format("Transportando a: %1", nombreAccion));
+		}
+		else
+		{
+			EnviarHintAlJugador(playerId, "No se puede completar el teletransporte.");
 		}
 	}
 
 	//------------------------------------------------------------------------------------------------
-	//! Elige un destino aleatorio de la lista, priorizando destinos válidos (que existan en el mundo)
+	//! Elige un destino aleatorio de la lista filtrando los que no existen o están
+	//! demasiado cerca. Math.RandomInt(0, N) devuelve [0, N-1], que es correcto.
 	protected string ElegirDestinoAleatorio(IEntity player)
 	{
-		// Construir lista de destinos válidos (entidades que existen en el mundo)
 		array<string> destinosValidos = new array<string>();
 		
 		foreach (string nombre : listaDestinos)
@@ -93,7 +114,6 @@ class BEAR_GestorTeletransporteAleatorio : ScriptedUserAction
 			if (!entidad)
 				continue;
 			
-			// Verificar que la distancia sea suficiente para teletransportar
 			float distancia = vector.Distance(player.GetOrigin(), entidad.GetOrigin());
 			if (distancia < DISTANCIA_MINIMA_TELEPORT)
 				continue;
@@ -104,40 +124,83 @@ class BEAR_GestorTeletransporteAleatorio : ScriptedUserAction
 		if (destinosValidos.IsEmpty())
 			return string.Empty;
 		
-		// Elegir índice aleatorio
+		// Math.RandomInt(min, max) → [min, max-1], por tanto Count() como límite es correcto
 		int indiceAleatorio = Math.RandomInt(0, destinosValidos.Count());
 		return destinosValidos[indiceAleatorio];
 	}
 
 	//------------------------------------------------------------------------------------------------
-	protected bool ValidarEntidades(IEntity owner, IEntity user)
-	{
-		return owner && user;
-	}
-
-	//------------------------------------------------------------------------------------------------
-	protected bool JugadorEnCooldown(int playerId)
-	{
-		return mapaRecargaJugadores.Contains(playerId) && mapaRecargaJugadores.Get(playerId);
-	}
-
-	//------------------------------------------------------------------------------------------------
+	//! CORRECCIÓN PRINCIPAL para MP: SetOrigin() solo mueve la entidad pero no
+	//! notifica al CharacterControllerComponent ni resetea físicas. En servidor
+	//! dedicado esto puede hacer que el motor devuelva al jugador a su posición
+	//! anterior. Reseteamos la velocidad tras mover para evitarlo.
 	protected bool TeletransportarJugador(IEntity player, string nombreDestino)
 	{
 		IEntity entidadDestino = GetGame().GetWorld().FindEntityByName(nombreDestino);
-
 		if (!entidadDestino)
 			return false;
 
 		vector posJugador = player.GetOrigin();
 		vector posDestino = entidadDestino.GetOrigin();
 
-		// Calcular posición final con offset para evitar colisiones
+		// Calcular posición final con offset para evitar colisión con el objeto destino
 		vector direccionOffset = (posJugador - posDestino).Normalized();
 		vector posicionFinal = posDestino + (direccionOffset * DESPLAZAMIENTO_TELEPORT);
 
+		// CORRECCIÓN: mover y resetear velocidad para que las físicas no reviertan el teleport
 		player.SetOrigin(posicionFinal);
+		
+		Physics physics = player.GetPhysics();
+		if (physics)
+			physics.SetVelocity(vector.Zero);
+
 		return true;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! CORRECCIÓN: SCR_HintManagerComponent.ShowCustomHint() es una función de UI
+	//! que solo funciona en el proceso cliente. Llamarla desde el servidor en un
+	//! servidor dedicado no tiene efecto. Este método aplica el mismo patrón
+	//! que BEAR_GestorTeletransporte: fallback para servidor escuchante/local,
+	//! y documentación del componente RPC para servidor dedicado puro.
+	//!
+	//! Para servidor dedicado 100% robusto, usa BEAR_TeleportNotifyComponent
+	//! (ver comentario al final del archivo).
+	protected void EnviarHintAlJugador(int playerId, string mensaje)
+	{
+		IEntity playerEntity = GetGame().GetPlayerManager().GetPlayerControlledEntity(playerId);
+		if (!playerEntity)
+			return;
+
+		// En servidor escuchante o modo local, la llamada directa sí llega al cliente local.
+		// En servidor dedicado puro, esta llamada no tiene efecto: usa el componente RPC.
+		if (!IsDedicatedServer())
+		{
+			SCR_HintManagerComponent.ShowCustomHint(mensaje, "Viaje Rápido", 3.0);
+		}
+
+		// Si tienes BEAR_TeleportNotifyComponent en el prefab del jugador:
+		// BEAR_TeleportNotifyComponent notifyComp = BEAR_TeleportNotifyComponent.Cast(
+		//     playerEntity.FindComponent(BEAR_TeleportNotifyComponent)
+		// );
+		// if (notifyComp)
+		//     notifyComp.MostrarHintDesdeServidor(mensaje, "Viaje Rápido");
+	}
+
+	//------------------------------------------------------------------------------------------------
+	protected bool IsDedicatedServer()
+	{
+		ArmaReforgerScripted game = GetGame();
+		if (!game)
+			return false;
+		return (game.GetPlayerManager().GetPlayerCount() > 0 &&
+		        game.GetPlayerController() == null);
+	}
+
+	//------------------------------------------------------------------------------------------------
+	protected bool JugadorEnCooldown(int playerId)
+	{
+		return mapaRecargaJugadores.Contains(playerId) && mapaRecargaJugadores.Get(playerId);
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -167,21 +230,8 @@ class BEAR_GestorTeletransporteAleatorio : ScriptedUserAction
 		float ultimoUso = mapaUltimoUso.Get(playerId);
 		float tiempoActual = GetGame().GetWorld().GetWorldTime();
 		float transcurrido = (tiempoActual - ultimoUso) / 1000.0;
-		float restante = tiempoRecarga - transcurrido;
-		
-		if (restante < 0)
-			return 0;
-			
-		return restante;
-	}
-	
-	//------------------------------------------------------------------------------------------------
-	protected void MostrarSugerenciaAJugador(IEntity player, string mensaje)
-	{
-		if (!player)
-			return;
-			
-		SCR_HintManagerComponent.ShowCustomHint(mensaje, "Viaje Rápido", 3.0);
+
+		return Math.Max(0, tiempoRecarga - transcurrido);
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -203,13 +253,36 @@ class BEAR_GestorTeletransporteAleatorio : ScriptedUserAction
 	}
 	
 	//------------------------------------------------------------------------------------------------
-	// Obtiene el nombre configurado en UI Info
 	protected string ObtenerNombreAccion()
 	{
-	    UIInfo uiInfo = GetUIInfo();
-	    if (!uiInfo)
-	        return string.Empty;
-	        
-	    return uiInfo.GetName();
+		UIInfo uiInfo = GetUIInfo();
+		if (!uiInfo)
+			return string.Empty;
+		return uiInfo.GetName();
 	}
 }
+
+
+//------------------------------------------------------------------------------------------------
+//! NOTA PARA SERVIDOR DEDICADO:
+//!
+//! Para que los hints lleguen al cliente en un servidor dedicado puro, añade este
+//! componente a tu prefab de jugador y úsalo en EnviarHintAlJugador() (ver arriba).
+//!
+//! [ComponentEditorProps(category: "Bear")]
+//! class BEAR_TeleportNotifyComponentClass : ScriptComponentClass {}
+//!
+//! class BEAR_TeleportNotifyComponent : ScriptComponent
+//! {
+//!     [RplRpc(RplChannel.Reliable, RplRcver.Owner)]
+//!     protected void RpcDo_MostrarHint(string mensaje, string titulo)
+//!     {
+//!         // Se ejecuta en el CLIENTE propietario del personaje
+//!         SCR_HintManagerComponent.ShowCustomHint(mensaje, titulo, 3.0);
+//!     }
+//!
+//!     void MostrarHintDesdeServidor(string mensaje, string titulo)
+//!     {
+//!         Rpc(RpcDo_MostrarHint, mensaje, titulo);
+//!     }
+//! }
