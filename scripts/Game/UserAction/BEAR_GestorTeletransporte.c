@@ -31,7 +31,7 @@ class BEAR_GestorTeletransporte : ScriptedUserAction
 			return;
 
 		// Llamamos al RPC directamente sobre el objeto pc, que sí extiende RplComponent
-		pc.BEAR_RPC_SolicitarTeleport(destino_ViajeRapido, tiempoRecarga);
+		pc.BEAR_RPC_SolicitarTeleport(destino_ViajeRapido, tiempoRecarga, GetActionName());
 	}
 
 	//------------------------------------------------------------------------------------------------

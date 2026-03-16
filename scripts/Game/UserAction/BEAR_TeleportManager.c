@@ -21,7 +21,7 @@ modded class SCR_PlayerController
 
 	//! Petición de teletransporte a destino fijo. Se ejecuta en el servidor.
 	[RplRpc(RplChannel.Reliable, RplRcver.Server)]
-	void BEAR_RPC_SolicitarTeleport(string nombreDestino, int cooldown)
+	void BEAR_RPC_SolicitarTeleport(string nombreDestino, int cooldown, string nombreMostrar)
 	{
 		IEntity jugador = GetControlledEntity();
 		if (!jugador)
@@ -76,7 +76,7 @@ modded class SCR_PlayerController
 
 		m_mBEAR_UltimoUso.Set(playerId, tiempoActual);
 
-		BEAR_RPC_MostrarHint(string.Format("Transportando a: %1", nombreDestino), "Viaje Rápido");
+		BEAR_RPC_MostrarHint(string.Format("Transportando a: %1", nombreMostrar), "Viaje Rápido");
 	}
 
 	//! Petición de teletransporte aleatorio. Se ejecuta en el servidor.
