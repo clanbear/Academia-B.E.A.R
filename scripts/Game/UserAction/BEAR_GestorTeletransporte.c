@@ -8,7 +8,7 @@ class BEAR_GestorTeletransporte : ScriptedUserAction
 	[Attribute("", UIWidgets.EditBox, "Destino", "Nombre exacto de la entidad destino en el mundo")]
 	protected string destino_ViajeRapido;
 
-	[Attribute("10", UIWidgets.Slider, "Cooldown (segundos)", "Tiempo de espera entre teletransportes", params: "0 300 1")]
+	[Attribute("5", UIWidgets.Slider, "Cooldown (segundos)", "Tiempo de espera entre teletransportes", params: "0 300 1")]
 	protected int tiempoRecarga;
 
 	//------------------------------------------------------------------------------------------------

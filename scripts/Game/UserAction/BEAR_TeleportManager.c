@@ -76,7 +76,7 @@ modded class SCR_PlayerController
 
 		m_mBEAR_UltimoUso.Set(playerId, tiempoActual);
 
-		BEAR_RPC_MostrarHint("Teletransporte completado.", "Viaje Rápido");
+		BEAR_RPC_MostrarHint(string.Format("Transportando a: %1", nombreDestino), "Viaje Rápido");
 	}
 
 	//! Petición de teletransporte aleatorio. Se ejecuta en el servidor.
@@ -154,7 +154,7 @@ modded class SCR_PlayerController
 
 		m_mBEAR_UltimoUso.Set(playerId, tiempoActual);
 
-		BEAR_RPC_MostrarHint(string.Format("Transportando a: %1", elegido), "Viaje Rápido");
+		BEAR_RPC_MostrarHint("Teletransporte completado.", "Viaje Rápido");
 	}
 
 	//------------------------------------------------------------------------------------------------

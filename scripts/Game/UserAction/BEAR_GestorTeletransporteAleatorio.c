@@ -5,7 +5,7 @@
 //! REQUISITO: BEAR_TeleportManager.c en la misma carpeta.
 class BEAR_GestorTeletransporteAleatorio : ScriptedUserAction
 {
-	[Attribute("10", UIWidgets.Slider, "Cooldown (segundos)", "Tiempo de espera entre teletransportes", params: "0 300 1")]
+	[Attribute("5", UIWidgets.Slider, "Cooldown (segundos)", "Tiempo de espera entre teletransportes", params: "0 300 1")]
 	protected int tiempoRecarga;
 
 	[Attribute("", UIWidgets.Auto, "Destinos posibles", "Lista de entidades destino. Se elegirá una aleatoriamente.")]
