@@ -4,7 +4,7 @@
 //! FLUJO EN SERVIDOR DEDICADO:
 //!   1. Cliente pulsa acción → PerformAction() en CLIENTE
 //!   2. Cliente llama pc.BEAR_RPC_SolicitarTeleport() → RPC llega al SERVIDOR
-//!   3. Servidor valida, mueve al jugador y llama BEAR_RPC_MostrarHint() → RPC llega al CLIENTE
+//!   3. Servidor valida, mueve al jugador y llama Rpc(pc.BEAR_RPC_MostrarHint()) → RPC llega al CLIENTE
 //!
 //! INSTALACIÓN:
 //!   Coloca este archivo junto a los otros scripts BEAR y compila con F7.
@@ -46,7 +46,7 @@ modded class SCR_PlayerController
 			float restante = cooldown - transcurrido;
 			if (restante > 0)
 			{
-				BEAR_RPC_MostrarHint(string.Format("Espera %1 segundos", Math.Ceil(restante)), "Viaje Rápido");
+				Rpc(BEAR_RPC_MostrarHint, string.Format("Espera %1 segundos", Math.Ceil(restante)), "Viaje Rápido");
 				return;
 			}
 		}
@@ -55,14 +55,14 @@ modded class SCR_PlayerController
 		IEntity destino = GetGame().GetWorld().FindEntityByName(nombreDestino);
 		if (!destino)
 		{
-			BEAR_RPC_MostrarHint("Destino no encontrado.", "Viaje Rápido");
+			Rpc(BEAR_RPC_MostrarHint, "Destino no encontrado.", "Viaje Rápido");
 			return;
 		}
 
 		// Comprobar distancia mínima
 		if (vector.Distance(jugador.GetOrigin(), destino.GetOrigin()) < 1.5)
 		{
-			BEAR_RPC_MostrarHint("Ya estás en el destino.", "Viaje Rápido");
+			Rpc(BEAR_RPC_MostrarHint, "Ya estás en el destino.", "Viaje Rápido");
 			return;
 		}
 
@@ -76,7 +76,7 @@ modded class SCR_PlayerController
 
 		m_mBEAR_UltimoUso.Set(playerId, tiempoActual);
 
-		BEAR_RPC_MostrarHint(string.Format("Transportando a: %1", nombreMostrar), "Viaje Rápido");
+		Rpc(BEAR_RPC_MostrarHint, string.Format("Transportando a: %1", nombreMostrar), "Viaje Rápido");
 	}
 
 	//! Petición de teletransporte aleatorio. Se ejecuta en el servidor.
@@ -107,7 +107,7 @@ modded class SCR_PlayerController
 			float restante = cooldown - transcurrido;
 			if (restante > 0)
 			{
-				BEAR_RPC_MostrarHint(string.Format("Espera %1 segundos", Math.Ceil(restante)), "Viaje Rápido");
+				Rpc(BEAR_RPC_MostrarHint, string.Format("Espera %1 segundos", Math.Ceil(restante)), "Viaje Rápido");
 				return;
 			}
 		}
@@ -132,7 +132,7 @@ modded class SCR_PlayerController
 
 		if (validos.IsEmpty())
 		{
-			BEAR_RPC_MostrarHint("No hay destinos válidos disponibles.", "Viaje Rápido");
+			Rpc(BEAR_RPC_MostrarHint, "No hay destinos válidos disponibles.", "Viaje Rápido");
 			return;
 		}
 
@@ -141,7 +141,7 @@ modded class SCR_PlayerController
 		IEntity destino = GetGame().GetWorld().FindEntityByName(elegido);
 		if (!destino)
 		{
-			BEAR_RPC_MostrarHint("Error al localizar el destino.", "Viaje Rápido");
+			Rpc(BEAR_RPC_MostrarHint, "Error al localizar el destino.", "Viaje Rápido");
 			return;
 		}
 
@@ -154,7 +154,7 @@ modded class SCR_PlayerController
 
 		m_mBEAR_UltimoUso.Set(playerId, tiempoActual);
 
-		BEAR_RPC_MostrarHint("Teletransporte completado.", "Viaje Rápido");
+		Rpc(BEAR_RPC_MostrarHint, "Teletransporte completado.", "Viaje Rápido");
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -166,5 +166,43 @@ modded class SCR_PlayerController
 	void BEAR_RPC_MostrarHint(string mensaje, string titulo)
 	{
 		SCR_HintManagerComponent.ShowCustomHint(mensaje, titulo, 3.0);
+	}
+	
+	//------------------------------------------------------------------------------------------------
+	// ── SPAWN REDIRECTOR ────────────────────────────────────────────────────
+	//------------------------------------------------------------------------------------------------
+
+	//! Llamado desde el servidor (BEAR_SpawnRedirector) para teletransportar
+	//! al jugador a su zona asignada tras el spawn.
+	//! Se ejecuta EN EL SERVIDOR gracias a RplRcver.Server.
+	[RplRpc(RplChannel.Reliable, RplRcver.Server)]
+	void BEAR_RPC_EjecutarSpawnRedirect(string nombreDestino)
+	{
+		IEntity jugador = GetControlledEntity();
+		if (!jugador)
+			return;
+
+		IEntity destino = GetGame().GetWorld().FindEntityByName(nombreDestino);
+		if (!destino)
+		{
+			Print(string.Format("[BEAR_TeleportManager] ERROR: entidad destino '%1' no encontrada.",
+				nombreDestino), LogLevel.ERROR);
+			Rpc(BEAR_RPC_MostrarHint,
+				string.Format("Error: zona '%1' no encontrada.", nombreDestino),
+				"Academia BEAR");
+			return;
+		}
+
+		vector posDestino = destino.GetOrigin();
+		posDestino[1] = posDestino[1] + 0.1;
+		jugador.SetOrigin(posDestino);
+
+		Physics fisica = jugador.GetPhysics();
+		if (fisica)
+			fisica.SetVelocity(vector.Zero);
+
+		Rpc(BEAR_RPC_MostrarHint,
+			string.Format("Bienvenido a tu zona: %1", nombreDestino),
+			"Academia BEAR");
 	}
 }
